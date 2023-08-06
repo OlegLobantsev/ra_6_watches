@@ -7,11 +7,11 @@ export default function Controller() {
   const [list, setList] = useState([]);
 
   const addWatch = (watch) => {
-    setList((prevList) => [...prevList, watch]);
+    setList([...list, watch]);
   }
 
   const onDelete = (id) => {
-    setList(list.filter((el) => el.id !== id))
+    setList(prevList => prevList.filter(el => el.id !== id));
   }
   
   return (
